@@ -1,19 +1,14 @@
 
 # wled-json-api-over-serial
-This is a very simple [example code](https://github.com/miwied/wled-json-api-over-serial/blob/main/src/main.cpp) of how to work with the [WLED](https://github.com/Aircoookie/WLED) json api over serial using [PlatformIO](https://platformio.org/) and the [ArduinoJson library](https://github.com/bblanchon/ArduinoJson).
-
-With the help of the wled json api you are able to use all api commands to control a wled-flashed-mcu with any other serial capable microcontroller. 
-
-In my example sketch by pressing a button which is conntected to the sending-mcu it will change the color of the led-strip on the wled-mcu.
+这是一个非常简单的示例代码，展示了如何使用PlatformIO通过串行接口与[WLED](https://github.com/Aircoookie/WLED) JSON API进行交互。借助WLED JSON API，您能够使用所有API命令来控制任何其他具有串行能力的微控制器上闪存了WLED的MCU。在我的示例草图中，通过按下连接到发送MCU的按钮，可以更改WLED-MCU上LED灯条的颜色。
 
 ## Setup:
-- sending-µC: esp32 
-- receiving-µC: esp32 with WLED0.15
-- wled version: "WLED-0.15"
-- baud rate: 115200 
+- 发送的微控制器: esp32
+- 接收的微控制器: esp32，使用WLED0.15
+- WLED版本: "WLED-0.15"- 波特率: 115200
 
 ## Note:
-SoftwareSerial is only suitable for very slow baud rates, definitely not 921600. You should always use HardwareSerial if possible, and in case SoftwareSerial is indispensable, use the lowest possible rate.
+SoftwareSerial 仅适用于非常低的波特率，绝对不适合 921600。如果可能，您应该始终使用 HardwareSerial；如果 SoftwareSerial 是不可或缺的，请使用尽可能低的波特率。
 本代码用HardwareSerial，波特率115200
 
 ## Connections:
