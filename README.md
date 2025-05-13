@@ -8,15 +8,17 @@ In my example sketch by pressing a button which is conntected to the sending-mcu
 
 ## Setup:
 - sending-µC: esp32 
-- receiving-µC: esp8266
-- wled version: "WLED-0.13.0-b6"
+- receiving-µC: esp32 with WLED0.15
+- wled version: "WLED-0.15"
 - baud rate: 115200 
-- tested baudrates: 115200, 230400, 460800, 500000, 921600, 1000000, 1500000
 
 ## Note:
 SoftwareSerial is only suitable for very slow baud rates, definitely not 921600. You should always use HardwareSerial if possible, and in case SoftwareSerial is indispensable, use the lowest possible rate.
+本代码用HardwareSerial，波特率115200
 
 ## Connections:
-- esp32 pin 2(RX) <-> esp8266 pin 1(TX)
-- esp32 pin 4(TX) <-> esp8266 pin 3(RX)
-- esp32 gnd <-> esp8266 gnd
+| 串口 | ESP32引脚功能 | 默认GPIO |
+| -- | --------- | ------ |
+| TX | 串口发送      | GPIO17 |---------WLED  RX  GPIO3
+| RX | 串口接收      | GPIO16 |---------WLED  TX  GPIO1
+注意：两者GND需共线
