@@ -1,5 +1,5 @@
 
-# wled-json-api-over-serial
+#  WLED_Serise_Project WITH JSON API
 这是一个非常简单的示例代码，展示了如何使用PlatformIO通过串行接口与[WLED](https://github.com/Aircoookie/WLED) JSON API进行交互。借助WLED JSON API，您能够使用所有API命令来控制任何其他具有串行能力的微控制器上闪存了WLED的MCU。在我的示例草图中，通过按下连接到发送MCU的按钮，可以更改WLED-MCU上LED灯条的颜色。
 
 ## Setup:
